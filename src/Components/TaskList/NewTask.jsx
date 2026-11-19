@@ -1,7 +1,6 @@
 import React from 'react'
 
 const NewTask = ({elem}) => {
-    console.log(elem)
     return (
         <div className='relative bg-blue-900 h-90 w-[24%] shrink-0 p-5 rounded-2xl text-white'>
             <div className='flex justify-between'>

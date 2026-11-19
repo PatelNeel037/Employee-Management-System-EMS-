@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './Employee/Header'
 import AdminTaskCreater from './Admin/AdminTaskCreater'
 import AllTask from './Admin/AllTask'
+import { useContext } from 'react'
+import { authContext } from '../../Context/AuthProvider'
+import { useState } from 'react'
 
-const AdminDashboard = ({setUser, userData}) => {
+const AdminDashboard = ({ setUser, userData }) => {
+  const authData = useContext(authContext)
+  const [userTask, setUserTask] = useState([])
+  useEffect(() => {
+    setUserTask(authData.employeeData)
+    console.log('hey')
+  }, [authData.employeeData])
   return (
     <div className='bg-[#0b0b0b] h-screen w-full'>
-        <Header setUser = {setUser} userData = {userData}/>
-        <AdminTaskCreater />
-        <AllTask />
+      <Header setUser={setUser} userData={userData} />
+      <AdminTaskCreater />
+      {userTask? <AllTask data={userTask}/> : ""}
     </div>
   )
 }

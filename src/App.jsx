@@ -13,6 +13,7 @@ const App = () => {
   const authData = useContext(authContext)
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('role')))
   const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('user')))
+  
   const handelLogin = (email, password) => {
 
     if (authData.adminData.find((u) => (u.email == email && u.password == password))) {

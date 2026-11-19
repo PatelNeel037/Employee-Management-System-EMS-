@@ -5,31 +5,24 @@ import CompletedTask from '../../TaskList/CompletedTask'
 import Failed from '../../TaskList/Failed'
 
 const TaskCard = ({ userData }) => {
-    console.log(userData)
     return (
         <div className='mt-5'>
             <div id='task-card' className='p-5 flex gap-5 flex-nowrap overflow-x-auto '>
 
-                {userData.task.map((elem) => {
+                {userData.task.map((elem, key) => {
                     if (elem.newTask) {
-                        return <NewTask elem={elem} />
+                        return <NewTask key={key} elem={elem} />
                     }
                     if (elem.active) {
-                        return <ActiveTask elem={elem} />
+                        return <ActiveTask key={key} elem={elem} />
                     }
                     if (elem.completed) {
-                        return <CompletedTask elem={elem} />
+                        return <CompletedTask key={key} elem={elem} />
                     }
                     if (elem.failed) {
-                        return <Failed elem={elem} />
+                        return <Failed key={key} elem={elem} />
                     }
                 })}
-
-
-                {/* <NewTask />
-                <ActiveTask />
-                <CompletedTask />
-                <Failed /> */}
             </div>
         </div>
     )

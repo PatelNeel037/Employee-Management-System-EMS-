@@ -1,7 +1,6 @@
 import React from 'react'
 
 const TaskStatus = ({userData}) => {
-    console.log(userData)
   return (
     <div className='mt-5'>
         <div className='flex gap-5 p-5 h-37.5 justify-start text-white'>

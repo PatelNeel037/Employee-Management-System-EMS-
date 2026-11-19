@@ -1,52 +1,30 @@
 import React from 'react'
 
-const AllTask = () => {
-  return (
-    <div className=' p-5'>
-        <div id='all-task' className='bg-[#222223] h-50 flex flex-col gap-3 overflow-auto rounded p-3 '>
-            <div className='flex justify-between bg-green-300 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
+const AllTask = ({ data }) => {
+    return (
+        <div className='m-5'>
+            <div>
+                <div className='flex bg-amber-950 px-3 py-2 rounded'>
+                    <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>Name</h1>
+                    <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>active</h1>
+                    <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>Completed</h1>
+                    <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>New Task</h1>
+                    <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>Failed</h1>
+                </div>
             </div>
-            <div className='flex justify-between bg-pink-300 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
-            </div>
-            <div className='flex justify-between bg-blue-300 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
-            </div>
-            <div className='flex justify-between bg-red-300 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
-            </div>
-            <div className='flex justify-between bg-purple-300 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
-            </div>
-            <div className='flex justify-between bg-cyan-300 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
-            </div>
-            <div className='flex justify-between bg-gray-300 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
-            </div>
-            <div className='flex justify-between bg-amber-900 p-2 rounded'>
-                <h1>Holder</h1>
-                <h1>Make a UI desing</h1>
-                <h1>Name of Emplyoee</h1>
+            <div id='user-task' className='mt-5 h-40 flex flex-col gap-2 overflow-hidden overflow-y-auto'>
+                {data.map((elem, key) => {
+                    return <div key={key} className='flex bg-amber-950 px-3 py-2 rounded'>
+                        <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>{elem.name}</h1>
+                        <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>{elem.taskNumbers.active}</h1>
+                        <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>{elem.taskNumbers.completed}</h1>
+                        <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>{elem.taskNumbers.newTask}</h1>
+                        <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>{elem.taskNumbers.failed}</h1>
+                    </div>
+                })}
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default AllTask

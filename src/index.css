@@ -8,6 +8,6 @@ body {
     display: none;
 }
 
-#all-task::-webkit-scrollbar {
+#user-task::-webkit-scrollbar {
     display: none;
 }
