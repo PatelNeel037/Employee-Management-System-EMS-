@@ -7,17 +7,16 @@ import { authContext } from '../../Context/AuthProvider'
 import { useState } from 'react'
 
 const AdminDashboard = ({ setUser, userData }) => {
-  const authData = useContext(authContext)
+  // const authData = useContext(authContext)
   const [userTask, setUserTask] = useState([])
   useEffect(() => {
-    setUserTask(authData.employeeData)
-    console.log('hey')
-  }, [authData.employeeData])
+    setUserTask(JSON.parse(localStorage.getItem('employee')))
+  }, [])
   return (
     <div className='bg-[#0b0b0b] h-screen w-full'>
       <Header setUser={setUser} userData={userData} />
       <AdminTaskCreater />
-      {userTask? <AllTask data={userTask}/> : ""}
+      <AllTask data={userTask}/>
     </div>
   )
 }

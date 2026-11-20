@@ -1,21 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 const AdminTaskCreater = () => {
+    const data = JSON.parse(localStorage.getItem('employee'))
 
     const [taskTitle, setTaskTitle] = useState('')
     const [date, setDate] = useState('')
     const [userName, setUserName] = useState('')
-    const [Category, setCategory] = useState('')
+    const [category, setCategory] = useState('')
     const [description, setDescription] = useState('')
+    const [userTask, setUserTask] = useState('')
+
+    useEffect(() => {
+        setUserTask({
+            active: false,
+            newTask: true,
+            completed: false,
+            failed: false,
+            taskTitle: taskTitle,
+            taskDescription: description,
+            taskDate: date,
+            category: category
+        })
+    }, [taskTitle, description, date, category, userName])
 
     const submitHandler = (e) => {
         e.preventDefault()
-        setTaskTitle('')
-        setDate('')
-        setUserName('')
-        setCategory('')
-        setDescription('')
+
+        data.forEach((elem) => {
+            if (elem.name == userName) {
+                elem.task.push(userTask)
+                elem.taskNumbers.newTask = elem.taskNumbers.newTask + 1
+                localStorage.setItem('employee', JSON.stringify(data))
+            }
+        });
+
+        // setTaskTitle('')
+        // setDate('')
+        // setUserName('')
+        // setCategory('')
+        // setDescription('')
     }
 
     return (
@@ -58,7 +82,7 @@ const AdminTaskCreater = () => {
                                 onChange={(e) => {
                                     setCategory(e.target.value)
                                 }}
-                                value={Category}
+                                value={category}
                                 className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='Desing, dev, etc' />
                         </div>
                     </div>
