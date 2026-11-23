@@ -12,7 +12,11 @@ const ActiveTask = ({elem}) => {
                 <h1 className='text-sm mt-2'>{elem.taskDescription}</h1>
             </div>
             <div className='mt-4 w-full flex justify-around items-center gap-3 absolute bottom-10 left-0'>
-                <button className='bg-lime-600 rounded-2xl active:scale-90 cursor-pointer px-2 py-1'>Mark As Completed</button>
+                <button 
+                onClick={(e) => {
+                    console.log('clicked')
+                }}
+                className='bg-lime-600 rounded-2xl active:scale-90 cursor-pointer px-2 py-1'>Mark As Completed</button>
                 <button className='bg-red-600 rounded-2xl active:scale-90 cursor-pointer px-2 py-1'>Mark As Failed</button>
             </div>
         </div>

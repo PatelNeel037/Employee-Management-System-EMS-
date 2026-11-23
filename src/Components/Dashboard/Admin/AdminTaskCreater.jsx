@@ -9,48 +9,48 @@ const AdminTaskCreater = ({ setData, data }) => {
     const [category, setCategory] = useState('')
     const [description, setDescription] = useState('')
 
-   const submitHandler = (e) => {
-    e.preventDefault()
+    const submitHandler = (e) => {
+        e.preventDefault()
 
-    const userTask = {
-        active: false,
-        newTask: true,
-        completed: false,
-        failed: false,
-        taskTitle: taskTitle,
-        taskDescription: description,
-        taskDate: date,
-        category: category
-    }
-
-    const updatedData = data.map((elem) => {
-        if (elem.name === userName) {
-            return {
-                ...elem,
-                task: [...elem.task, userTask],
-                taskNumbers: {
-                    ...elem.taskNumbers,
-                    newTask: elem.taskNumbers.newTask + 1
-                }
-            }
+        const userTask = {
+            active: false,
+            newTask: true,
+            completed: false,
+            failed: false,
+            taskTitle: taskTitle,
+            taskDescription: description,
+            taskDate: date,
+            category: category
         }
 
-        return elem
-    })
+        const updatedData = data.map((elem) => {
+            if (elem.name === userName) {
+                return {
+                    ...elem,
+                    task: [...elem.task, userTask],
+                    taskNumbers: {
+                        ...elem.taskNumbers,
+                        newTask: elem.taskNumbers.newTask + 1
+                    }
+                }
+            }
 
-    setData(updatedData)
+            return elem
+        })
 
-    localStorage.setItem(
-        'employee',
-        JSON.stringify(updatedData)
-    )
+        setData(updatedData)
 
-    setTaskTitle('')
-    setDate('')
-    setUserName('')
-    setCategory('')
-    setDescription('')
-}
+        localStorage.setItem(
+            'employee',
+            JSON.stringify(updatedData)
+        )
+
+        setTaskTitle('')
+        setDate('')
+        setUserName('')
+        setCategory('')
+        setDescription('')
+    }
 
     return (
         <div className='mt-5'>

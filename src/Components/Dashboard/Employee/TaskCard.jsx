@@ -4,13 +4,13 @@ import NewTask from '../../TaskList/NewTask'
 import CompletedTask from '../../TaskList/CompletedTask'
 import Failed from '../../TaskList/Failed'
 
-const TaskCard = ({ userData }) => {
+const TaskCard = ({ userData, setUserData }) => {
 
     const taskCard = () => {
         return (
             userData.task.map((elem, key) => {
                 if (elem.newTask) {
-                    return <NewTask idx={key} key={key} elem={elem} userId={userData.id} />
+                    return <NewTask idx={key} key={key} elem={elem} userId={userData.id} setUserData={setUserData} />
                 }
                 if (elem.active) {
                     return <ActiveTask key={key} elem={elem} />
