@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 const AllTask = ({ data }) => {
+    
     return (
         <div className='m-5'>
             <div>
@@ -19,8 +20,7 @@ const AllTask = ({ data }) => {
                         <h1 className='w-1/5 flex justify-center font-bold text-gray-200'>{elem.name}</h1>
                         <h1 className='w-1/5 flex justify-center font-bold text-purple-800'>{elem.taskNumbers.active}</h1>
                         <h1 className='w-1/5 flex justify-center font-bold text-blue-700'>{elem.taskNumbers.completed}</h1>
-                        <h1 className='w-1/5 flex justify-center font-bold text-green-300'>{elem.taskNumbers.newTask
-                        }</h1>
+                        <h1 className='w-1/5 flex justify-center font-bold text-green-300'>{elem.taskNumbers.newTask}</h1>
                         <h1 className='w-1/5 flex justify-center font-bold text-red-600'>{elem.taskNumbers.failed}</h1>
                     </div>
                 })}

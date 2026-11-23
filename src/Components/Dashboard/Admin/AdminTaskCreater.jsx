@@ -1,46 +1,56 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 
-const AdminTaskCreater = () => {
-    const data = JSON.parse(localStorage.getItem('employee'))
+const AdminTaskCreater = ({ setData, data }) => {
 
     const [taskTitle, setTaskTitle] = useState('')
     const [date, setDate] = useState('')
     const [userName, setUserName] = useState('')
     const [category, setCategory] = useState('')
     const [description, setDescription] = useState('')
-    const [userTask, setUserTask] = useState('')
 
-    useEffect(() => {
-        setUserTask({
-            active: false,
-            newTask: true,
-            completed: false,
-            failed: false,
-            taskTitle: taskTitle,
-            taskDescription: description,
-            taskDate: date,
-            category: category
-        })
-    }, [taskTitle, description, date, category, userName])
+   const submitHandler = (e) => {
+    e.preventDefault()
 
-    const submitHandler = (e) => {
-        e.preventDefault()
-
-        data.forEach((elem) => {
-            if (elem.name == userName) {
-                elem.task.push(userTask)
-                elem.taskNumbers.newTask = elem.taskNumbers.newTask + 1
-                localStorage.setItem('employee', JSON.stringify(data))
-            }
-        });
-
-        // setTaskTitle('')
-        // setDate('')
-        // setUserName('')
-        // setCategory('')
-        // setDescription('')
+    const userTask = {
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: false,
+        taskTitle: taskTitle,
+        taskDescription: description,
+        taskDate: date,
+        category: category
     }
+
+    const updatedData = data.map((elem) => {
+        if (elem.name === userName) {
+            return {
+                ...elem,
+                task: [...elem.task, userTask],
+                taskNumbers: {
+                    ...elem.taskNumbers,
+                    newTask: elem.taskNumbers.newTask + 1
+                }
+            }
+        }
+
+        return elem
+    })
+
+    setData(updatedData)
+
+    localStorage.setItem(
+        'employee',
+        JSON.stringify(updatedData)
+    )
+
+    setTaskTitle('')
+    setDate('')
+    setUserName('')
+    setCategory('')
+    setDescription('')
+}
 
     return (
         <div className='mt-5'>
