@@ -13,7 +13,7 @@ const TaskCard = ({ userData, setUserData }) => {
                     return <NewTask idx={key} key={key} elem={elem} userId={userData.id} setUserData={setUserData} />
                 }
                 if (elem.active) {
-                    return <ActiveTask key={key} elem={elem} />
+                    return <ActiveTask idx={key} key={key} elem={elem} setUserData={setUserData}/>
                 }
                 if (elem.completed) {
                     return <CompletedTask key={key} elem={elem} />

@@ -25,16 +25,16 @@ const NewTask = ({ elem, idx, userId, setUserData }) => {
                         });
                         const setNewTask = {
                             ...user,
-                            task: user.task.map((elem, index) => {
+                            task: user.task.map((n, index) => {
 
                                 if (idx == index) {
                                     return {
-                                        ...elem,
+                                        ...n,
                                         active: true,
                                         newTask: false
                                     }
                                 }
-                                return elem
+                                return n
 
                             })
                         }
