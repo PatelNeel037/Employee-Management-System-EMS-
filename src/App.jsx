@@ -8,7 +8,6 @@ import { getLocalStorage } from './Utils/LocalStorage'
 
 const App = () => {
 
-
   const authData = useContext(authContext)
   const employeeData = JSON.parse(localStorage.getItem('employee'))
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('role')))

@@ -21,8 +21,11 @@ const NewTask = ({ elem, idx, userId, setUserData }) => {
                             if (node.id == userId) {
                                 node.task[idx].newTask = false;
                                 node.task[idx].active = true;
+                                node.taskNumbers.newTask = node.taskNumbers.newTask - 1
+                                node.taskNumbers.active = node.taskNumbers.active + 1
                             }
                         });
+                        
                         const setNewTask = {
                             ...user,
                             task: user.task.map((n, index) => {
@@ -36,8 +39,14 @@ const NewTask = ({ elem, idx, userId, setUserData }) => {
                                 }
                                 return n
 
-                            })
+                            }),
+                            taskNumbers: {
+                                ...user.taskNumbers,
+                                newTask: user.taskNumbers.newTask - 1,
+                                active: user.taskNumbers.active + 1
+                            }
                         }
+                        
                         setUserData(setNewTask)
                         localStorage.setItem('user', JSON.stringify(setNewTask))
                         localStorage.setItem('employee', JSON.stringify(data))

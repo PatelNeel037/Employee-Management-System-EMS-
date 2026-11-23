@@ -27,21 +27,64 @@ const ActiveTask = ({ elem, idx, setUserData }) => {
                                     }
                                 }
                                 return n
-                            })
+                            }),
+                            taskNumbers: {
+                                ...user.taskNumbers,
+                                active: user.taskNumbers.active - 1,
+                                completed: user.taskNumbers.completed + 1
+                            }
                         }
                         
                         data.forEach((node) => {
                             if (node.id == setCompletedTask.id) {
                                 node.task[idx].active = false
                                 node.task[idx].completed = true
+                                node.taskNumbers.active = node.taskNumbers.active - 1
+                                node.taskNumbers.completed = node.taskNumbers.completed + 1
                             }
                         })
+                        
                         setUserData(setCompletedTask)
                         localStorage.setItem('user', JSON.stringify(setCompletedTask))
                         localStorage.setItem('employee', JSON.stringify(data))
                     }}
                     className='bg-lime-600 rounded-2xl active:scale-90 cursor-pointer px-2 py-1'>Mark As Completed</button>
-                <button className='bg-red-600 rounded-2xl active:scale-90 cursor-pointer px-2 py-1'>Mark As Failed</button>
+                <button
+                    onClick={(e) => {
+                        const setFailedTask = {
+                            ...user,
+                            task:
+                                user.task.map((n, index) => {
+                                    if (index == idx) {
+                                        return {
+                                            ...n,
+                                            active: false,
+                                            failed: true
+                                        }
+                                    }
+                                    return n
+                                }),
+                            taskNumbers: {
+                                ...user.taskNumbers,
+                                active: user.taskNumbers.active - 1,
+                                failed: user.taskNumbers.failed + 1
+                            }
+                        }
+                        
+                        data.forEach((node) => {
+                            if (node.id == setFailedTask.id) {
+                                node.task[idx].active = false
+                                node.task[idx].failed = true
+                                node.taskNumbers.active = node.taskNumbers.active - 1
+                                node.taskNumbers.failed = node.taskNumbers.failed + 1
+                            }
+                        });
+                        
+                        setUserData(setFailedTask)
+                        localStorage.setItem('user', JSON.stringify(setFailedTask))
+                        localStorage.setItem('employee', JSON.stringify(data))
+                    }}
+                    className='bg-red-600 rounded-2xl active:scale-90 cursor-pointer px-2 py-1'>Mark As Failed</button>
             </div>
         </div>
     )
