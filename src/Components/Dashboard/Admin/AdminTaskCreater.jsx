@@ -66,7 +66,7 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setTaskTitle(e.target.value)
                                 }}
                                 value={taskTitle}
-                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='Make a UI desing' />
+                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='eg: Make a UI desing' />
                         </div>
                         <div>
                             <h2>Date</h2>
@@ -93,7 +93,7 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setCategory(e.target.value)
                                 }}
                                 value={category}
-                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='Desing, dev, etc' />
+                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='eg: Design, dev, etc' />
                         </div>
                     </div>
                     <div className=' w-1/2'>

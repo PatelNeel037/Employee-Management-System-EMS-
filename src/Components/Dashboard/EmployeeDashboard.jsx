@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from './Employee/Header'
 import TaskStatus from './Employee/TaskStatus'
 import TaskCard from './Employee/TaskCard'

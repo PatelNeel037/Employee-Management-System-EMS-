@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react'
 import Header from './Employee/Header'
 import AdminTaskCreater from './Admin/AdminTaskCreater'
 import AllTask from './Admin/AllTask'
-import { useContext } from 'react'
-import { authContext } from '../../Context/AuthProvider'
 import { useState } from 'react'
 
 const AdminDashboard = ({ setUser, userData }) => {
