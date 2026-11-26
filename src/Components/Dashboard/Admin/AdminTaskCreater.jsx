@@ -66,6 +66,7 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setTaskTitle(e.target.value)
                                 }}
                                 value={taskTitle}
+                                required
                                 className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='eg: Make a UI desing' />
                         </div>
                         <div>
@@ -75,6 +76,7 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setDate(e.target.value)
                                 }}
                                 value={date}
+                                required
                                 className=' w-full border border-white px-2 py-1 outline-none rounded ' type="date" />
                         </div>
                         <div>
@@ -84,6 +86,7 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setUserId(e.target.value)
                                 }}
                                 value={userId}
+                                required
                                 className=' w-full border border-white px-2 py-1 outline-none rounded ' type="number" placeholder='employee Id' />
                         </div>
                         <div>
@@ -93,6 +96,7 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setCategory(e.target.value)
                                 }}
                                 value={category}
+                                required
                                 className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='eg: Design, dev, etc' />
                         </div>
                     </div>
@@ -104,6 +108,7 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setDescription(e.target.value)
                                 }}
                                 value={description}
+                                
                                 className='rounded w-full h-50 border border-white px-2 py-1 '></textarea>
                         </div>
                         <button type="submit" className='bg-green-400 rounded w-full px-3 py-2 active:scale-95'>Create Task</button>

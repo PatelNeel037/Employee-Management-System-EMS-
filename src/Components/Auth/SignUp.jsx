@@ -98,9 +98,16 @@ const SignUp = ({ setUser }) => {
                         type="submit">
                         Create Account
                     </button>
-
-
+                    <h1>Or</h1>
                 </form>
+                 <button
+                onClick={() => {
+                    localStorage.setItem('role', 'null')
+                    setUser(null)
+                }}
+                 className='mt-3 bg-[#0D131F] hover:bg-white hover:text-black hover:shadow-[5px_5px_20px_rgba(255,255,255,0.35),-5px_-5px_20px_rgba(255,255,255,0.35)] shadow-[inset_2px_2px_20px_rgba(0,0,0,0.35),inset_-2px_-2px_20px_rgba(0,0,0,0.35)] rounded-2xl active:scale-95 w-full p-2'>
+                    LogIn
+                </button>
 
             </div>
         </div>
