@@ -5,7 +5,7 @@ const AdminTaskCreater = ({ setData, data }) => {
 
     const [taskTitle, setTaskTitle] = useState('')
     const [date, setDate] = useState('')
-    const [userName, setUserName] = useState('')
+    const [userId, setUserId] = useState('')
     const [category, setCategory] = useState('')
     const [description, setDescription] = useState('')
 
@@ -24,7 +24,7 @@ const AdminTaskCreater = ({ setData, data }) => {
         }
 
         const updatedData = data.map((elem) => {
-            if (elem.name === userName) {
+            if (elem.id == userId) {
                 return {
                     ...elem,
                     task: [...elem.task, userTask],
@@ -47,7 +47,7 @@ const AdminTaskCreater = ({ setData, data }) => {
 
         setTaskTitle('')
         setDate('')
-        setUserName('')
+        setUserId('')
         setCategory('')
         setDescription('')
     }
@@ -81,10 +81,10 @@ const AdminTaskCreater = ({ setData, data }) => {
                             <h2>Asing To</h2>
                             <input
                                 onChange={(e) => {
-                                    setUserName(e.target.value)
+                                    setUserId(e.target.value)
                                 }}
-                                value={userName}
-                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='employee Name' />
+                                value={userId}
+                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="number" placeholder='employee Id' />
                         </div>
                         <div>
                             <h2>Category</h2>

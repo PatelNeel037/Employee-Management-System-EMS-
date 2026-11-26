@@ -5,6 +5,7 @@ import AdminDashboard from './Components/Dashboard/AdminDashboard'
 import { useContext } from 'react'
 import { authContext } from './Context/AuthProvider'
 import { getLocalStorage } from './Utils/LocalStorage'
+import SignUp from './Components/Auth/SignUp'
 
 const App = () => {
 
@@ -34,7 +35,7 @@ const App = () => {
   }
   return (
     <>
-      {!user ? <Login handelLogin={handelLogin} /> : (user == '1' ? <AdminDashboard setUser={setUser} userData={userData} /> : <EmployeeDashboard setUser={setUser} userData={userData} setUserData={setUserData} />)}
+      {!user ? <Login handelLogin={handelLogin} setUser={setUser} /> : (user == '1' ? <AdminDashboard setUser={setUser} userData={userData} /> : (user == '2' ? <EmployeeDashboard setUser={setUser} userData={userData} setUserData={setUserData} /> : <SignUp setUser={setUser} />))}
       
     </>
   )
