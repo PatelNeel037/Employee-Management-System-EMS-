@@ -53,21 +53,23 @@ const AdminTaskCreater = ({ setData, data }) => {
     }
 
     return (
-        <div className='mt-5'>
-            <div className='p-5'>
+        <div className='mt-5 w-1/2'>
+            
                 <form onSubmit={(e) => {
                     submitHandler(e)
-                }} className='bg-[#222223] flex justify-between p-5 rounded gap-80'>
-                    <div className='w-1/2 flex flex-col gap-3'>
+                }} className='bg-[#171B26] p-8 rounded-3xl shadow-[inset_3px_3px_6px_rgba(255,255,255,0.12),inset_1px_1px_2px_rgba(255,255,255,0.20),inset_-6px_-6px_12px_rgba(0,0,0,0.5),0px_14px_28px_rgba(0,0,0,0.65),0px_6px_12px_-2px_rgba(0,0,0,0.45)]'>
+                    <div className='flex flex-col gap-3'>
                         <div>
-                            <h2>Task Title</h2>
+                            <h2 className='text-[12px] text-[#DFE2F1]'>Task Title</h2>
                             <input
                                 onChange={(e) => {
                                     setTaskTitle(e.target.value)
                                 }}
                                 value={taskTitle}
                                 required
-                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='eg: Make a UI desing' />
+                                className=' w-full bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] px-5.5 py-3 outline-none rounded-3xl text-[#464554]'
+                                type="text" 
+                                placeholder='eg: Make a UI desing' />
                         </div>
                         <div>
                             <h2>Date</h2>
@@ -77,7 +79,8 @@ const AdminTaskCreater = ({ setData, data }) => {
                                 }}
                                 value={date}
                                 required
-                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="date" />
+                               className=' w-full bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] px-5.5 py-3 outline-none rounded-3xl text-[#464554]' 
+                               type="date" />
                         </div>
                         <div>
                             <h2>Asing To</h2>
@@ -87,7 +90,8 @@ const AdminTaskCreater = ({ setData, data }) => {
                                 }}
                                 value={userId}
                                 required
-                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="number" placeholder='employee Id' />
+                                className=' w-full bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] px-5.5 py-3 outline-none rounded-3xl text-[#464554]' 
+                                type="number" placeholder='employee Id' />
                         </div>
                         <div>
                             <h2>Category</h2>
@@ -97,10 +101,11 @@ const AdminTaskCreater = ({ setData, data }) => {
                                 }}
                                 value={category}
                                 required
-                                className=' w-full border border-white px-2 py-1 outline-none rounded ' type="text" placeholder='eg: Design, dev, etc' />
+                                className=' w-full bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] px-5.5 py-3 outline-none rounded-3xl text-[#464554]' 
+                                type="text" placeholder='eg: Design, dev, etc' />
                         </div>
                     </div>
-                    <div className=' w-1/2'>
+                    
                         <div className='w-full'>
                             <h2>Description</h2>
                             <textarea
@@ -108,13 +113,14 @@ const AdminTaskCreater = ({ setData, data }) => {
                                     setDescription(e.target.value)
                                 }}
                                 value={description}
-                                
-                                className='rounded w-full h-50 border border-white px-2 py-1 '></textarea>
+                                placeholder='Provide detailed instructions, acceptance criteria, Figma links, or API contract specifications...'
+                                className=' w-full scrollbar-none bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] px-5.5 py-3 outline-none rounded-3xl text-[#464554]'>
+                                </textarea>
                         </div>
-                        <button type="submit" className='bg-green-400 rounded w-full px-3 py-2 active:scale-95'>Create Task</button>
-                    </div>
+                        <button type="submit" className='bg-[#00A572] mt-5 shadow-[0px_12px_24px_-4px_rgba(78,222,163,0.35)] rounded-3xl w-full px-8 py-5 active:scale-95 text-[#003824]'>+ Create & Assign Task</button>
+                    
                 </form>
-            </div>
+            
         </div>
     )
 }

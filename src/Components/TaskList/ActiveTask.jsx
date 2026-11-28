@@ -4,7 +4,7 @@ const ActiveTask = ({ elem, idx, setUserData }) => {
     const user = JSON.parse(localStorage.getItem('user'))
     const data = JSON.parse(localStorage.getItem('employee'))
     return (
-        <div className='relative bg-[#1C1F2A] transition-transform  hover:-translate-y-3 shadow-[inset_1px_1px_2px_rgba(255,255,255,0.35),inset_-4px_-4px_5px_rgba(0,0,0,0.35)] h-90  shrink-0 p-5 rounded-2xl text-white'>
+        <div className='relative bg-[#1C1F2A] transition-transform  hover:-translate-y-3 shadow-[inset_3px_3px_6px_rgba(255,255,255,0.12),inset_1px_1px_2px_rgba(255,255,255,0.20),inset_-6px_-6px_12px_rgba(0,0,0,0.5),0px_14px_28px_rgba(0,0,0,0.65),0px_6px_12px_-2px_rgba(0,0,0,0.45)] h-90  shrink-0 p-5 rounded-2xl text-white'>
             <div className='flex justify-between gap-25'>
                 <h1 className='bg-[#1C1F2A] text-xs px-2 py-1 text-[#C7C4D7] hover:text-[#C0C1FF] shadow-[inset_1px_1px_3px_rgba(255,255,255,0.35),inset_-1px_-1px_3px_rgba(0,0,0,0.35)]  rounded-4xl'>{elem.category}</h1>
                 <h1 className='bg-[#0A0E18] text-xs hover:text-[#4CD7F6] px-2 py-1 rounded-2xl shadow-[inset_2px_2px_2px_rgba(0,0,0,0.35),inset_-2px_-2px_20px_rgba(0,0,0,0.35),0px_1px_1px_rgba(144,143,160,0.35)] text-[#908FA0]'>{elem.taskDate}</h1>

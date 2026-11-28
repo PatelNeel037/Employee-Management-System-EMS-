@@ -15,8 +15,8 @@ const Login = ({ handelLogin, setUser }) => {
     }
 
     return (
-        <div className='flex justify-center items-center h-screen bg-[#070a11] text-white'>
-            <div className='shadow-[8px_8px_20px_rgba(0,0,0,0.5),-8px_-8px_20px_rgba(0,0,0,0.5)] flex flex-col justify-center items-center bg-[#101522] p-4 h-fit w-100 rounded-2xl'>
+        <div className='flex justify-center items-center h-screen bg-[#0F131D] text-white'>
+            <div className='shadow-[inset_3px_3px_6px_rgba(255,255,255,0.12),inset_1px_1px_2px_rgba(255,255,255,0.20),inset_-6px_-6px_12px_rgba(0,0,0,0.5),0px_14px_28px_rgba(0,0,0,0.65),0px_6px_12px_-2px_rgba(0,0,0,0.45)] flex flex-col justify-center items-center bg-[#101522] p-4 h-fit w-100 rounded-2xl'>
                 <h1 className='mb-10 text-[#FFFFFF] text-[32px]'>WELCOME</h1>
                 <form
                     onSubmit={(e) => {
@@ -31,7 +31,7 @@ const Login = ({ handelLogin, setUser }) => {
                             }}
                             value={email}
                             required
-                            className=' bg-[#0D131F] shadow-[inset_2px_2px_20px_rgba(0,0,0,0.35),inset_-2px_-2px_20px_rgba(0,0,0,0.35)] outline-none w-full text-[#76777D] border-none rounded-2xl px-3 py-2'
+                            className=' bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] outline-none w-full text-[#76777D] border-none rounded-2xl px-3 py-2'
                             type="email"
                             placeholder='kallu@op.com'
                         />
@@ -45,13 +45,13 @@ const Login = ({ handelLogin, setUser }) => {
                             }}
                             value={password}
                             required
-                            className=' bg-[#0D131F] shadow-[inset_2px_2px_20px_rgba(0,0,0,0.35),inset_-2px_-2px_20px_rgba(0,0,0,0.35)] outline-none w-full text-[#76777D] border-none rounded-2xl px-3 py-2'
+                            className=' bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] outline-none w-full text-[#76777D] border-none rounded-2xl px-3 py-2'
                             type="password"
                             placeholder='********'
                         />
                     </div>
                     <button
-                        className='bg-[#4F46E5] text-2xl rounded-2xl p-2 w-full active:scale-95 shadow-[0px_10px_20px_rgba(79,70,229,0.5)]  hover:shadow-[5px_5px_20px_rgba(255,255,255,0.35),-5px_-5px_20px_rgba(255,255,255,0.35)]'
+                        className='bg-[#4F46E5] text-2xl rounded-2xl p-2 w-full active:scale-95 shadow-[inset_0px_2px_3px_1px_rgba(255,255,255,0.45),0px_6px_12px_-2px_rgba(0,0,0,0.4),0px_16px_32px_-4px_rgba(79,70,229,0.55),inset_0px_-3px_5px_1px_rgba(20,15,80,0.5)]  hover:shadow-[5px_5px_20px_rgba(255,255,255,0.35),-5px_-5px_20px_rgba(255,255,255,0.35)]'
                         type="submit">
                         Login
                     </button>
@@ -63,7 +63,7 @@ const Login = ({ handelLogin, setUser }) => {
                     localStorage.setItem('role', '3')
                     setUser(3)
                 }}
-                 className='mt-3 bg-[#0D131F] hover:bg-white hover:text-black hover:shadow-[5px_5px_20px_rgba(255,255,255,0.35),-5px_-5px_20px_rgba(255,255,255,0.35)] shadow-[inset_2px_2px_20px_rgba(0,0,0,0.35),inset_-2px_-2px_20px_rgba(0,0,0,0.35)] rounded-2xl active:scale-95 w-full p-2'>
+                 className='mt-3 hover:bg-white hover:text-black hover:shadow-[5px_5px_20px_rgba(255,255,255,0.35),-5px_-5px_20px_rgba(255,255,255,0.35)] bg-[#0A0E18] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.7),inset_-3px_-3px_6px_rgba(255,255,255,0.04),0px_1px_rgba(0,0,0,0.05)] rounded-2xl active:scale-95 w-full p-2'>
                     Sign Up
                 </button>
             </div>

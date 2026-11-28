@@ -7,10 +7,12 @@ const AdminDashboard = ({ setUser, userData }) => {
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem('employee')))
   return (
-    <div className='bg-[#0b0b0b] h-screen w-full'>
+    <div className='bg-[#0F131D] h-screen w-full'>
       <Header setUser={setUser} userData={userData} />
-      <AdminTaskCreater data={data} setData={setData}/>
+      <div className='flex justify-around gap-3 px-5'>
+        <AdminTaskCreater data={data} setData={setData}/>
       <AllTask data={data} />
+      </div>
     </div>
   )
 }
